@@ -34,17 +34,21 @@ section,article {
 }
 #bottom {
 	background-color: white;
-	height: 1200px;
 }
 #one,#two,#three {
 	float: left;
 	width: 126.6px;	/*what the ****/
+	padding-top: 0;
 }
 .font_info {
 	font-size: 12px;
-	color:#D2CBF1
+	color: #D2CBF1;
+}
+.header_h1 {
+	font-size: 28px;
 }
 .about {
+	padding-top: 5px;
 	font-size: 12px;
 }
 .mid_left,.mid_right,.Education {
@@ -53,19 +57,26 @@ section,article {
 }
 .Education {
 	width: 540px;
+	padding-top: 10px;
 }
 .mid_left,.mid_right {
-		width: 230px;
+	width: 230px;
 }
 h1 {
 	font-size: 25px;
 }
 #contact {
 	float: right;
-	font-size: 10px;
-	color: #D2CBF1;
-	padding-top: 40px;
+	font-size: 14px;
+/*	color: red;*/
+	color: #D2CBF1; 
+	padding-top: 35px;
 }
 #name {
 	float: left;
+	height: 100px;
 }
+#zhong {
+	padding-top: 0;
+}
+/*2036~*/
