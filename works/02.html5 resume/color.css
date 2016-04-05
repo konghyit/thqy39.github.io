@@ -14,7 +14,8 @@ section, header, article {
 body {
 	width: 620px;
 	font-family:xujinglei;
-	background: url(1.jpg);
+	background: url(1.jpg) repeat-y;
+/*	background-color: grey;*/
 	position: relative;
 	left: 60px;
 	top: 30px;
