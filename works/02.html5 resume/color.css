@@ -13,9 +13,8 @@ section, header, article {
 }
 body {
 	width: 620px;
-	height: 1600px;
 	font-family:xujinglei;
-	background: url(1.jpg) fixed;
+	background: url(1.jpg);
 	position: relative;
 	left: 60px;
 	top: 30px;
