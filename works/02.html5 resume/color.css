@@ -2,6 +2,11 @@
   padding: 0;
   margin: 0;
 }
+@media screen and (max-width:640px) {
+	* {
+		background: red;
+	}
+}
 @font-face
 {
 font-family: xujinglei;
@@ -14,8 +19,9 @@ section, header, article {
 body {
 	width: 620px;
 	font-family:xujinglei;
-	background-image: url(1.jpg);
-	background-repeat:  repeat-y;
+/*	background-image: url(1.jpg);
+	background-repeat:  repeat-y;*/
+	background-color: rgb(206,170,150);
 	position: relative;
 	left: 60px;
 	top: 30px;
@@ -39,7 +45,7 @@ section,article {
 }
 .font_info {
 	font-size: 1px;
-	color:#D2CBF1
+	color:#D2CBF1;
 }
 .about {
 	font-size: 5px;
