@@ -5,6 +5,9 @@
  */
 
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+* {
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
 
 article,
 aside,
