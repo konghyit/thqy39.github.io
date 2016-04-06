@@ -9,7 +9,7 @@
                 overlayColor: '#2e9dbd',
                 overlayOpacity: 0.5,
                 zoom: 25,
-                speed: 300
+                speed: 200
             };
              
             var settings = $.extend(defaults, settings);
