@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+    <title>The BlackJack(21)</title>
+    <link rel=stylesheet href="css/main.css">
+    <link rel="stylesheet" href="css/animation.css">
+</head>
+<body>
+    <header><!-- logo及游戏名称部分 -->
+        <img src="img/Logo.png" alt="logo" />
+        <h1>BlackJack(21)</h1>
+    </header>
+    <section><!-- 游戏主体部分 -->
+        <div class="circle">
+            <div>
+                <img src="img/back.png" alt="发牌" class="send" id="send" onclick="sendCard()">
+            </div> <!-- 发牌区 -->
+            <div><img src="img/back.png" class="noMove" /></div>
+            <div><!-- 候牌区1 -->
+                <div id="p_1"><p style="color: white">1号电脑</p></div>
+            </div>
+            <div><!-- 候牌区1 -->
+                <div id="p_2"><p style="color: white">2号：您</p></div> 
+            </div>
+        </div>
+        <div id="btns"><!-- 操作按钮们 -->
+                <div id="btnSend"><p>新游戏</p></div><!-- 新游戏按钮 -->
+                <div id="addCard"><p>要牌</p></div><!-- 要牌按钮 -->
+                <div id="showCard"><p>亮牌</p></div><!-- 亮牌按钮 -->
+                <div id="exit"><p>退出</p></div><!-- 退出按钮 -->
+        </div>
+        <div id="player1"><!-- 候牌区占位符1 -->
+            <p class="score">积分</p>
+            <p class='point'>1000</p>
+        </div>
+        <div id="player2"><!-- 候牌区占位符2 -->
+            <p class="score">积分</p>
+            <p class='point'>1000</p>
+        </div>
+    </section>
+    <footer><!-- 版权声明 -->
+        <p>本游戏仅为奇虎360公司前端星计划编写，第三方人员在未征得本人同意之前请勿使用本代码</p>
+    </footer>
+    <script src="script/main.js"></script>
+</body>
+</html>

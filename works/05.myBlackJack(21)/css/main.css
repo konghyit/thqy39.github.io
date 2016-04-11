@@ -1,0 +1,165 @@
+/*消除不同浏览器对盒子的解释影响，便于精准定位。*/
+*{
+    margin: 0;
+    padding: 0;
+}
+/*游戏背景*/
+body {
+    background-image: url(../img/bg.jpg);/*rgb(43,17,15)*/;
+    position: absolute;
+}
+header {
+    text-align: center;
+    position: relative;
+}
+/*logo定位*/
+header img {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+}
+/*标题定位*/
+h1 {
+    position: absolute;
+    top: 0;
+    color: white;
+    left: 510px;
+    margin-top: 15px;
+}
+/*版权声明*/
+footer {
+    position: relative;
+}
+footer p {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    color: #ffa;
+}
+/*利用css绘制的游戏桌面主体，并采取半透明的处理以增强美感*/
+.circle {
+    background: rgba(7,121,5,0.7);
+    border-radius: 50%;
+    position: absolute;
+    top: -460px;
+    left: 145px;
+    width: 900px;
+    height: 900px;
+    border: 30px solid rgba(85,72,4,0.9);
+}
+/*发牌区动画的出发点以及牌*/
+.send {
+    position: absolute;
+    top: 531px;
+    right: 50px;
+    height: 85px;
+    width: 60px;
+    -ms-transform: rotate(35deg); /* IE 9 */
+    -webkit-transform: rotate(35deg); /* Safari and Chrome */
+    -o-transform: rotate(35deg); /* Opera */
+    -moz-transform: rotate(35deg); /* Firefox */
+    transform: rotate(35deg);
+    background-color: white;
+    z-index: 2;
+    border-top: 3px solid white;
+    border-right: 2px solid white;
+}
+#p_1,#p_2 {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 170, 0.5);
+    border-radius: 6px;
+    height: 85px;
+    width: 60px;
+}
+#p_1,#p_2 p {
+    color: white;
+}
+#p_1 {
+    top: 518px;
+    left: 310px;
+}
+#p_2 {
+    top: 518px;
+    left: 500px;
+}
+.send:hover {
+    transform: rotate(35deg) scale(1.1);
+}
+.card{
+    z-index: 2;
+	border: 1px solid rgba(0,0,0,0.5);
+    height: 85px;
+    width: 60px;
+	margin-bottom: -63px;
+    background-image: url(../img/sources.jpeg);
+    margin-left: -1px;
+    border-radius: 5px;
+}
+.card-hidden{
+    z-index: 2;
+	border: 1px solid rgba(0,0,0,0.6);
+    height: 85px;
+    width: 60px;
+	margin-bottom: -63px;
+    background: url(../img/Back_1.png) no-repeat;
+    background-size: 70px 96px;
+    background-position: -4px -5px;
+    margin-left: -1px;
+    border-radius: 5px;
+}
+/*操作按钮的定位*/
+#btns {
+    position: relative;
+    top: 360px;
+    left: 476px;
+}
+/*按钮的颜色为白，以突出显示*/
+#btns p {
+    margin-top: 70px;
+    margin-left: 12px;
+    color: white;
+}
+/*Actions系列操作按钮的并排定位定显示背景为组图的局部*/
+#btnSend,#addCard,#showCard,#exit {
+    position: relative;
+    background-image: url(../img/Actions.png);
+    width: 60px;
+    height: 58px;
+    float: left;
+    margin-left: 10px;
+}
+#addCard {
+    background-image: url(../img/Actions.png);
+    background-position: -60px 0;
+}
+#showCard {
+    background-image: url(../img/Actions.png);
+    background-position: 180px 180px;
+}
+/*引入logo至退出按钮位*/
+#exit {
+   background-image: url(../img/Logo.png);
+}
+/*Actions系列操作按钮鼠标移入出现pointer手势*/
+#btnSend,#addCard,#showCard,#exit:hover {
+    cursor: pointer;
+}
+#player1,#player2 {
+    position: absolute;
+    top: 80px;
+    left: 800px;
+}
+/*积分栏*/
+.point {
+    color: red;
+    margin-top: 4px;
+    margin-left: -2px;
+}
+/*积分栏标题样式*/
+.score {
+    color: white;
+    border-bottom: 2px solid #ffa;
+}
+#player1{
+	left: 413px;
+}

@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>ReadMe for BlackJack(21)</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+<style type="text/css">
+div.prism-show-language {
+	position: relative;
+}
+
+div.prism-show-language > div.prism-show-language-label {
+	color: black;
+	background-color: #CFCFCF;
+	display: inline-block;
+	position: absolute;
+	bottom: auto;
+	left: auto;
+	top: 0;
+	right: 0;
+	width: auto;
+	height: auto;
+	font-size: 0.9em;
+	border-radius: 0 0 0 5px;
+	padding: 0 0.5em;
+	text-shadow: none;
+	z-index: 1;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-transform: none;
+	-moz-transform: none;
+	-ms-transform: none;
+	-o-transform: none;
+	transform: none;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">The Document of BlackJack(21)</h1>
+
+<h2 id="toc_1">一.游戏介绍</h2>
+
+<h3 id="toc_2">1.起源</h3>
+
+<h3 id="toc_3">2.规则</h3>
+
+<h3 id="toc_4">3.技巧</h3>
+
+<h2 id="toc_5">二.游戏设计</h2>
+
+<h3 id="toc_6">1.整体UI构思</h3>
+
+<h3 id="toc_7">2.素材采集</h3>
+
+<h3 id="toc_8">3.游戏总规划</h3>
+
+<h2 id="toc_9">三.代码设计</h2>
+
+<h3 id="toc_10">0.编码规范以及优化记录</h3>
+
+<h3 id="toc_11">1.HTML文档结构</h3>
+
+<h3 id="toc_12">2.CSS布局与动画</h3>
+
+<h3 id="toc_13">3.JavaScript功能模块</h3>
+
+<h2 id="toc_14">四.游戏测试（以下所列皆可正常运行游戏）</h2>
+
+<h3 id="toc_15">1.PC端</h3>
+
+<h3 id="toc_16">2.移动端</h3>
+
+<p><img src="http://7xstv1.com2.z0.glb.clouddn.com/1DDE22AC-C7FA-4B17-A485-81F1E8268CA7.png" alt="游戏界面"></p>
+
+<h2 id="toc_17">一.游戏介绍</h2>
+
+<h3 id="toc_18">1.起源</h3>
+
+<p>&emsp;&emsp;&emsp;&emsp;21点又名黑杰克（英文：Blackjack） ，起源于法国，已流传到世界各地。21点，是一种使用扑克牌玩的赌博游戏。亦是唯一一种在赌埸中可以在概率中战胜庄家的一种赌博游戏。</p>
+
+<h3 id="toc_19">2.规则</h3>
+
+<ul>
+<li>21点是一张牌面朝上(叫明牌)，一张牌面朝下(叫暗牌);给自己发两张牌，一张暗牌，一张明牌。</li>
+<li>玩家手中扑克点数的计算是:K、Q、J 和 10 牌都算作 10 点。</li>
+<li>A 牌既可算作1 点也可算作11 点，由玩家自己决定。</li>
+<li>其余所有2 至9 牌均按其原面值计算。</li>
+<li>如果玩家前两张牌是A 、10点牌，就拥有黑杰克(Blackjack);</li>
+<li>如果庄家没有黑杰克，玩家就能赢得2倍的赌金(1赔2)。</li>
+<li>没有黑杰克的玩家可以继续拿牌，可以随意要多少张。目的是尽量往21点靠，靠得越近越好。</li>
+<li>如果所有的牌加起来超过21点，玩家就输了--叫爆掉(Bust)，游戏随之结束。</li>
+<li>如果玩家没爆掉，又决定不再要牌了，这时庄家就把他的那张暗牌打开来。</li>
+<li>一般到17点或17点以上不再拿牌，但也有可能15到16点甚至12到13点就不再拿牌或者18到19点继续拿牌。（本游戏采用1号电脑的逻辑为达到16点便不再拿牌）</li>
+<li>假如庄家爆掉了，那他就输了.</li>
+<li>假如他没爆掉，那么你就与他比点数大小，大为赢。一样的点数为平手。</li>
+</ul>
+
+<h3 id="toc_20">3.技巧</h3>
+
+<ul>
+<li>障眼法
+
+<ul>
+<li>这种方法主要适合于闲家，而且在众多玩家参与的时候适用。</li>
+<li>一般在闲家明牌是10点的时候，如果牌底是3~7点，一般拿到这种点数特别难受，如果要牌，有50%的机率会暴，因为闲家暴点是100%输，不要牌可能也会输，我暂且把它称为尴尬点数。这时候，闲家如果观察到别的闲家点数都比较大，而且都不要牌的情况下，可以跟着不要。这样一来，就会给庄家很大的压力，以为每一位闲家手中的牌都是比较大的点数，如果庄家同样拿着尴尬点数，这种情况只能逼着庄家要牌，很明了，无形中所用的这个障眼法是把风险转移给了庄家，输赢靠天定了，看哪个运气好了，若庄家爆了，则闲家赢。</li>
+</ul></li>
+<li>姜太公钓鱼法<br>
+
+<ul>
+<li>这种方法主要适合于闲家，而且在众多玩家参与的时候适用。</li>
+<li>一般在闲家明牌是10点的时候，如果牌底是3~7点，一般拿到这种点数特别难受，如果要牌，有50%的机率会暴，因为闲家暴点是100%输，不要牌可能也会输，我暂且把它称为尴尬点数。这时候，闲家如果观察到别的闲家点数都比较大，而且都不要牌的情况下，可以跟着不要。这样一来，就会给庄家很大的压力，以为每一位闲家手中的牌都是比较大的点数，如果庄家同样拿着尴尬点数，这种情况只能逼着庄家要牌，很明了，无形中所用的这个障眼法是把风险转移给了庄家，输赢靠天定了，看哪个运气好了，若庄家爆了，则闲家赢。</li>
+</ul></li>
+<li>补救法
+
+<ul>
+<li>这种方法庄家闲家都适用。</li>
+<li>所谓补救，就是拿到的是前面所提到的尴尬点数，输地可能性极大，在明知道牌点数就比对手点数小的情况下，我们只能要牌，因为不要也是输，而要牌还有一线希望是赢，所以我们能选择的就是奔那一线希望，寄希望总比放弃希望好。<br></li>
+</ul></li>
+</ul>
+
+<h2 id="toc_21">二.游戏设计</h2>
+
+<h3 id="toc_22">1.整体UI构思</h3>
+
+<ul>
+<li>背景：我认为需要一个暗色的、非纯色的背景。</li>
+<li>桌面：一张记忆中赌博赛事的标准绿色桌子，木质黄色的边。</li>
+<li>按钮：于是有了简约风格的画面，接下来我考虑将按钮在桌面中。</li>
+<li>logo：考虑到游戏叫 21点，所以 应用了简单却不失代表性的带阴影的透明21图标。</li>
+<li>候牌：做两个等牌区的底框（透明的淡色框），等待发牌，并标注玩家x号。</li>
+<li>积分：考虑到筹码问题，于是在等牌区的一侧做一个不太复杂的标注，响应整体简约的风格。</li>
+<li>标题：放在桌面的正中央，游戏主题的表示，BlackJack(21)足矣。<br />
+
+<ul>
+<li><strong><em>⚠️不能贴顶，至少产生h1 { margin-top:20px;} 以保持美感。</em></strong></li>
+<li><strong><em>游戏界面的色彩搭配灵感部分来源于其他网络扑克游戏</em></strong></li>
+<li><strong><em>（游戏素材均来自网络）</em></strong></li>
+</ul></li>
+</ul>
+
+<h3 id="toc_23">2.素材采集</h3>
+
+<p><img src="http://7xstv1.com2.z0.glb.clouddn.com/Logo.png" alt="游戏logo">
+<img src="http://7xstv1.com2.z0.glb.clouddn.com/Actions.png" alt="操作手势"></p>
+
+<p><img src="http://7xstv1.com2.z0.glb.clouddn.com/Back.png" alt="发牌堆、暗牌">
+<img src="http://7xstv1.com2.z0.glb.clouddn.com/bg.jpg" alt="背景">
+<img src="http://7xstv1.com2.z0.glb.clouddn.com/sources.jpeg" alt="一副扑克牌13＊4"></p>
+
+<h3 id="toc_24">3.游戏总规划</h3>
+
+<ul>
+<li>利用<strong>html＋css</strong>将设计好的整体的布局＋采集到的素材➡️应用到配置、搭建一个初始的页面，后期再给予精确调整控制。
+
+<ul>
+<li><strong>html基本文档结构</strong></li>
+<li><strong>css布局</strong>
+根据游戏的需求来编写不同的<strong>css动画</strong>和<strong>js</strong>功能函数以贴近游戏规则、增强游戏体验。</li>
+<li><strong>css动画</strong>
+
+<ul>
+<li>使用animation keyforms完成动画:保证每次新局首发牌一人两张，且1号电脑玩家的第二张牌为暗牌，后再发牌则进行一人一张动画。</li>
+<li>配合js控制扑克牌发出前后的显隐，特别是亮牌后1号电脑暗牌的显示。</li>
+</ul></li>
+</ul></li>
+<li><strong>JavaScript</strong>各功能函数设计
+
+<ul>
+<li><strong>实现actions系列按钮的功能</strong>
+
+<ul>
+<li>新局 sendCard()</li>
+<li>要牌 sendCard()第二次开始</li>
+<li>亮牌 showSend()</li>
+<li>退出游戏 exit()</li>
+</ul></li>
+<li>初始化整副牌的数组，即洗牌，给52个数字重新分配扑克牌的值（花色，数字）</li>
+<li>本游戏设定只有一副牌，即在一个length为52的数组中抽取牌进行游戏，也就是说每次新局开始便初始化，保证其有52张牌的相应概率来进行游戏，属于不放回游戏。</li>
+<li>每张牌的选取靠js配合for控制量i对每张牌的坐标进行计算以保证每次新局初始化时都可以在random的控制下以tmp结果随机选取一张牌（剩余的牌堆中）。</li>
+<li>实现发牌后css动画结束前 ，计算相应偏移位置并自动添加html内容，使得动画结束之时，添加落牌刚好衔接，其中使用了for中的i控制外加settimeout实现单次计时。</li>
+</ul></li>
+<li><strong>本游戏规则的逻辑设定声明：</strong>
+
+<ul>
+<li>每次开局一人两张牌，后每次要牌均为单张发牌动画。</li>
+<li>1号电脑的设定是发牌小于16时，则在2号玩家点击要牌的同时加一张牌。若大于16，则不再要牌。2号玩家则自行判断，任意要牌。 </li>
+<li>Ace牌的1或11，在亮牌时进行智能判断：
+
+<ul>
+<li>如果按11算不会爆牌则会按照11计算</li>
+<li>如果按照11算会爆牌则会按照1来计算</li>
+</ul></li>
+<li>黑杰克：新局初次发牌两张为1+10
+
+<ul>
+<li>若为黑杰克，且庄家没有黑杰克时，则获胜时筹码加倍。</li>
+<li>庄家设定为一号电脑。</li>
+</ul></li>
+<li>如果双方有一方拿牌爆掉，便判定另一方为获胜方。</li>
+<li>如果都没有在拿牌过程中爆掉，则正常比对双方拥有的点数，小于21点且大的一方：获胜。</li>
+<li>Actions操作系列按钮说明：（从左到右依次）
+
+<ul>
+<li>手掌🖐️为新局</li>
+<li>食指☝️要加牌</li>
+<li>两张牌交换为两牌</li>
+<li>21点的logo为退出游戏</li>
+</ul></li>
+<li>本游戏 点击发牌区的牌效果＝点击 新局＋要牌按钮</li>
+</ul></li>
+</ul>
+
+<h2 id="toc_25">三.代码设计</h2>
+
+<h3 id="toc_26">0.编码规范以及优化记录</h3>
+
+<div><pre><code class="language-none">HTML：
+    标准的html结构，meta标签等
+    思考布局方式，合理的结构
+    避免使用行内样式
+    事件尽量采用事件绑定
+    页面样式尽量处理的精致一些（优先级以功能为主，这些次之）
+    本次作品，时间和质量的比重，质量的权重高，所以要优先提升质量
+
+CSS：
+    1. 页面单独引用xxxx.css
+    2. 功能样式可以分类（就算没必要分页、也可以按照功能写在一起），如：
+        2.1 公共样式：包括字体、h1~h6 p div等会用到的一些样式
+        2.2 布局样式：就是布局相关的css写在一起，主要处理布局、结构
+        2.3 功能样式：各个子功能块样式，如：桌面、操作图标，基本思想是按功能分块
+        2.4 编码相关：尽可能少使用id；最好使用class，且其命名有功能性
+        （用于绑定事件)
+        样式性（用户写样式），命名语义话（能表达出你这个样式是干什么用的，
+        尽量避免写flash1、flash2...）（已经改成sendCardTo）
+    动画相关样式可以单独写在一个文件里，进行引用
+    手机上不居中可能也是这个原因，另外手机上可以设置meta的viewport.
+    按钮问题：可以给其父元素一个position:relative;
+    然后操作元素整体使用position:absolute;bottom:xx;进行定位
+    如果手机上要求访问效果和PC相同，可以考虑样式做两套（根据时间情况看吧）
+
+Js：
+     格式得当。
+     尽量简化代码。
+     简单封装一下dom操作：获取dom、addClass、removeClass、事件绑定等。
+     合理的注释，每个方法都得有注释。
+     函数命名按照功能命名。</code></pre></div>
+
+<h3 id="toc_27">1.HTML文档结构</h3>
+
+<div><pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;&lt;/header&gt;
+    &lt;section&gt;
+        &lt;div&gt;&lt;/div&gt;
+        …… …… …… ……
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/section&gt;
+    &lt;footer&gt;&lt;/footer&gt;
+    &lt;script&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+
+<ul>
+<li>本结构由html5中语义化标签构成，使得文档易读、结构清晰。</li>
+<li>细节则根据题意和规则设计来完善</li>
+</ul>
+
+<h3 id="toc_28">2.CSS布局与动画</h3>
+
+<ul>
+<li>动画
+
+<ul>
+<li>设定路径实现简单的翻转发牌animation动画</li>
+</ul></li>
+</ul>
+
+<div><pre><code class="language-css">/*绘制透明的绿色桌面以及木质桌面边缘*/
+@keyframes sendCardTo1 
+{
+    0% { right:-450px;top: 30px; transform: rotate(240deg); }
+    100% { right: 0; transform: rotate(0); }
+}
+@keyframes sendCardTo2 
+{
+    0% { right:-220px; top:30px; transform: rotate(240deg); }
+    100% { right: 0; top:0; transform: rotate(0); }
+}
+@-moz-keyframes sendCardTo1 /* Firefox */
+{sendCardTo1
+    0% { right:-450px;top: 30px; transform: rotate(240deg); }
+    100% { right: 0; transform: rotate(0); }
+}
+@-moz-keyframes sendCardTo2 /* Firefox */
+{
+    0% { right:-220px; top:30px; transform: rotate(240deg); }
+    100% { right: 0; top:0; transform: rotate(0); }
+}
+@-webkit-keyframes sendCardTo1 /* Safari 和 Chrome */
+{
+    0% { right:-450px;top: 30px; transform: rotate(240deg); }
+    100% { right: 0; transform: rotate(0); }
+}
+@-webkit-keyframes sendCardTo2 /* Safari 和 Chrome */
+{
+    0% { right:-220px; top:30px; transform: rotate(240deg); }
+    100% { right: 0; top:0; transform: rotate(0); }
+}
+@-o-keyframes sendCardTo1 /* Opera */
+{
+    0% { right:-450px;top: 30px; transform: rotate(240deg); }
+    100% { right: 0; transform: rotate(0); }
+}
+@-o-keyframes sendCardTo2 /* Opera */
+{
+    0% { right:-220px; top:30px; transform: rotate(240deg); }
+    100% { right: 0; top:0; transform: rotate(0); }
+}</code></pre></div>
+
+<ul>
+<li>布局
+
+<ul>
+<li>绘制桌面主体以及发牌区牌及牌堆</li>
+<li>控制各个部件定位，样式</li>
+<li>调整至可以正常在移动端（手机端）进行游戏</li>
+</ul></li>
+</ul>
+
+<div><pre><code class="language-css">.circle {
+    background: rgba(7,121,5,0.7);
+    border-radius: 50%;
+    position: absolute;
+    top: -460px;
+    left: 145px;
+    width: 900px;
+    height: 900px;
+    border: 30px solid rgba(85,72,4,0.9);
+}
+/*发牌区动画的出发点以及牌*/
+.send {
+    position: absolute;
+    top: 531px;
+    right: 50px;
+    height: 85px;
+    width: 60px;
+    -ms-transform: rotate(35deg); /* IE 9 */
+    -webkit-transform: rotate(35deg); /* Safari and Chrome */
+    -o-transform: rotate(35deg); /* Opera */
+    -moz-transform: rotate(35deg); /* Firefox */
+    transform: rotate(35deg);
+    background-color: white;
+    z-index: 2;
+    border-top: 3px solid white;
+    border-right: 2px solid white;
+}</code></pre></div>
+
+<h3 id="toc_29">3.JavaScript功能模块</h3>
+
+<ul>
+<li>sendCard()：
+
+<ul>
+<li>利用num来实现第一次发牌为一人两张，第二次开始皆为一张。</li>
+<li>使用setTimeout函数来实现一次性的定时操作：使得在动画结束后的已设定的时刻，依次调用realSend()函数以衔接发牌动作。</li>
+<li>实现了防治未开始游戏便点击亮牌的错误逻辑：新游戏开始调用sendCard(id)则begain++，若未执行此处，则要牌和亮牌均无法执行。</li>
+</ul></li>
+</ul>
+
+<div><pre><code class="language-javascript">//此为核心代码，重复部分已省去，详情见源代码。
+var num = 1;
+    if (count[1].count == 0) {
+        num = 2;
+        //AI
+        for (var i = 0; i &lt; num; ++i) {
+            setTimeout(function() {realSend(1)}, i * 100);
+            setTimeout(function() {
+                var n = document.getElementById(&#39;p_1&#39;)
+                .getElementsByClassName(&#39;send-card1&#39;);
+                if (n.length &gt; 0)
+                    n[0].classList.remove(&#39;send-card1&#39;);
+            }, i * 100 + 800);
+        }
+    }</code></pre></div>
+
+<ul>
+<li>showCard()：
+
+<ul>
+<li>实现了防止未开始游戏便点击亮牌的错误逻辑</li>
+<li>实现了亮牌后的一系列函数动作:</li>
+<li>getMax()、alert(count[id].sum)、lose()（已分别注释）</li>
+<li>以及根据结果判断输赢并弹出提示。</li>
+</ul></li>
+</ul>
+
+<div><pre><code class="language-javascript">//此为核心代码，重复部分已省去，详情见源代码。
+var begain = 0;//防止没开始游戏直接点击要牌和亮牌的按钮
+
+function showCard() {
+    if (begain == 0) {} else {
+        var hidden = document.getElementById(&#39;p_1&#39;)
+        .getElementsByClassName(&#39;card-hidden&#39;)[0];
+        if (typeof(hidden) != &quot;undefined&quot;)
+            hidden.result();
+        if (over)
+            return;
+        count[1].sum = getMax(1);
+        count[2].sum = getMax(2);
+         … … … …
+        if(){alert(&quot;… …&quot;); }else{alert(&quot;… …&quot;); };
+}</code></pre></div>
+
+<ul>
+<li>realSend()
+
+<ul>
+<li>通过getPorker()、getPorkerPos()获得初始扑克牌位置真实发牌.</li>
+<li>并进行相关的dom操作html以完成真实发牌动作。</li>
+<li>如果一开始两张牌为1和10则为黑杰克。</li>
+<li>如果2号玩家拥有黑杰克而庄家没有则筹码翻倍。</li>
+<li>根据count[id].sum &gt; 21与否对lose()进行传递id以获得相应提示。</li>
+</ul></li>
+</ul>
+
+<div><pre><code class="language-javascript">if (id == 1 &amp;&amp; count[1].count == 1) {
+        /* 庄家第二章暗牌 通过属性k, v来实现明牌和计算 */
+        newNode.className = &quot;send-card&quot; + id + &quot; card-hidden&quot;;
+        newNode.setAttribute(&#39;k&#39;, pos);
+        newNode.result = function() {
+            this.className = &quot;card&quot;;
+            this.style.backgroundPosition = 
+            this.getAttribute(&#39;k&#39;);
+        }
+    } else {
+        newNode.className = &quot;send-card&quot; + id + &quot; card&quot;;
+        newNode.style.backgroundPosition = pos;
+    }
+    if (count[id].count == 1)
+        newNode.setAttribute(&#39;v&#39;, card.value);
+    node.appendChild(newNode);
+
+    ++count[id].count;
+    /* 对A单独处理 */
+    if (card.value != 1) {
+        if (card.value &gt; 10)
+            count[id].sum += 10;
+        else
+            count[id].sum += card.value;
+    } else ++count[id].A;
+
+    var ai = count[1];
+    var pl = count[2];
+    if (pl.A == 1 &amp;&amp; pl.count == 2 &amp;&amp; pl.sum == 10)
+    //如果一开始两张牌为1和10则为黑杰克。
+        blackjack = 1;
+    if (blackjack == 
+    1 &amp;&amp; ai.A != 1 &amp;&amp; ai.count != 2 &amp;&amp; ai.sum != 10)
+        scale = 2;   
+        //如果2号玩家拥有黑杰克而庄家没有则筹码翻倍。
+
+    /* 先判定是否已经结束 否则调用机器人函数 */
+    if (count[id].sum &gt; 21)
+        lose(id);
+    else if (count[id].sum + count[id].A &gt; 21)
+        lose(id);
+    else if (id != 1 &amp;&amp; count[2].count &gt; 2)
+        AI();</code></pre></div>
+
+<ul>
+<li><p>getPorker()</p>
+
+<ul>
+<li>抽牌函数。</li>
+<li>每次从开局时定义好的52个数的数组中不放回（porker.pop();）抽牌。</li>
+<li>返回tmp关联数组供getPorkerPos调用。</li>
+</ul></li>
+<li><p>getPorkerPos()</p>
+
+<ul>
+<li>接受传入的tmp参数以获取背景坐标</li>
+</ul></li>
+</ul>
+
+<div><pre><code class="language-javascript">function getPorkerPos(tmp) {
+    // console.log(tmp.value);
+    return porkerPos[tmp.suit.toString()
+     + tmp.value.toString()];
+}</code></pre></div>
+
+<ul>
+<li><p>getMax()</p>
+
+<ul>
+<li>在sendCard中调用，为的是实现每次传入id值算总和时智能判定将A算作1或者11，获得最大的优势。</li>
+<li>如果把A算作11大于21,则将其算为1，否则，算11。</li>
+<li>随后返回sum。<br></li>
+</ul></li>
+<li><p>lose()</p>
+
+<ul>
+<li>接受由realCard()传入的id参数，以衔接弹窗提示判断输赢。<br></li>
+<li>根据不同情况，编写不同的获胜提示，以二号玩家为操作玩家的角度提示。</li>
+</ul></li>
+<li><p>init()</p>
+
+<ul>
+<li>初始化游戏，将候牌区的清空并替换成玩家编号提示。</li>
+<li>重置blackjack，scale，over值。</li>
+</ul></li>
+<li><p>AI()</p>
+
+<ul>
+<li>函数功能：当sendCard()触发AI执行逻辑:</li>
+<li>若1号电脑拿牌总和小于16或者A牌经过getMax()智能处理后依旧小于16时，执行realSend(1)以继续要牌，这是一个智能判断，增加了游戏的可玩性。</li>
+<li>同时配合动画删除发牌区中的待发牌，然后一张随机抽取的牌显示在相应的位置。<br></li>
+</ul></li>
+</ul>
+
+<div><pre><code class="language-javascript">function AI() {
+    if (noneed)
+        return;
+    if (count[1].sum + count[1].A &lt; 16 || getMax(1) &lt; 16) {
+        realSend(1);
+        setTimeout(function() {
+            var n = document.getElementById(&#39;p_1&#39;)
+            .getElementsByClassName(&#39;send-card1&#39;);
+            if (n.length &gt; 0)
+                n[0].classList.remove(&#39;send-card1&#39;);
+        }, 800);
+    } else
+        noneed = 1;
+}</code></pre></div>
+
+<ul>
+<li>DOM操作实现Actions按钮及发牌堆首张牌的点击功能函数的事件绑定：</li>
+</ul>
+
+<div><pre><code class="language-javascript">// 给［btnName］按钮 添加fn()功能并发牌功能
+function addFn(btnName,fn) {
+var btnName = document.getElementById(&quot;btnName&quot;);
+    btnName.onclick = function() {
+        if (begain == 0) {} else {
+            fn();
+        }
+    }
+}</code></pre></div>
+
+<h2 id="toc_30">四.游戏测试（以下所列皆可正常运行游戏）</h2>
+
+<h3 id="toc_31">1.PC端</h3>
+
+<ul>
+<li>Mac os x
+
+<ul>
+<li>chrome</li>
+<li>firefox</li>
+<li>safari</li>
+<li>IE11</li>
+<li>Edge</li>
+</ul></li>
+<li>Windows 10
+
+<ul>
+<li>chrome</li>
+<li>firefox</li>
+<li>safari</li>
+<li>IE11</li>
+<li>Edge</li>
+</ul></li>
+</ul>
+
+<h3 id="toc_32">2.移动端</h3>
+
+<ul>
+<li>Android:5.1 
+
+<ul>
+<li>自带浏览器</li>
+</ul></li>
+<li>ios:9.3 
+
+<ul>
+<li>Safari</li>
+</ul></li>
+</ul>
+
+<h2 id="toc_33">五.番外篇</h2>
+
+<h3 id="toc_34">异常：若遇到任何问题导致无法正常浏览源代码</h3>
+
+<ul>
+<li><strong>请您及时与我联系</strong>
+
+<ul>
+<li>手机号：15594980508</li>
+<li>邮箱：451323138@qq.com</li>
+</ul></li>
+<li><strong>您也可以访问我的个人小站进行测试下载：</strong>
+
+<ul>
+<li><a href="http://thqy39.GitHub.io">个人小站 </a>http://thqy39.GitHub.io</li>
+</ul></li>
+<li><strong>同时这份产品文档也将置顶在我的技术博客之中：</strong>
+
+<ul>
+<li><a href="http://thqy39.GitHub.io">技术博客 </a>http://www.cnblogs.com/thqy39/</li>
+</ul></li>
+</ul>
+
+<h3 id="toc_35">致谢：</h3>
+
+<div><pre><code class="language-none">感谢北京奇虎360可以给我这次展示自己的机会，无论结果如何。</code></pre></div>
+
+<h3 id="toc_36">版权：</h3>
+
+<div><pre><code class="language-none">本游戏仅为奇虎360公司前端星计划编写，任何人未征得本人同意
+之前请勿使用本代码作商业用途。</code></pre></div>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\w\W]*?\*\//,lookbehind:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0}],string:{pattern:/(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,greedy:!0},"class-name":{pattern:/((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,"boolean":/\b(true|false)\b/,"function":/[a-z0-9_]+(?=\()/i,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,operator:/--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,punctuation:/[{}[\];(),.:]/};
+</script>
+
+<script type="text/javascript">
+Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,number:/\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/,"function":/[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i}),Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^\/])\/(?!\/)(\[.+?]|\\.|[^\/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,lookbehind:!0,greedy:!0}}),Prism.languages.insertBefore("javascript","class-name",{"template-string":{pattern:/`(?:\\\\|\\?[^\\])*?`/,greedy:!0,inside:{interpolation:{pattern:/\$\{[^}]+\}/,inside:{"interpolation-punctuation":{pattern:/^\$\{|\}$/,alias:"punctuation"},rest:Prism.languages.javascript}},string:/[\s\S]+/}}}),Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(<script[\w\W]*?>)[\w\W]*?(?=<\/script>)/i,lookbehind:!0,inside:Prism.languages.javascript,alias:"language-javascript"}}),Prism.languages.js=Prism.languages.javascript;
+</script>
+
+<script type="text/javascript">
+Prism.languages.css={comment:/\/\*[\w\W]*?\*\//,atrule:{pattern:/@[\w-]+?.*?(;|(?=\s*\{))/i,inside:{rule:/@[\w-]+/}},url:/url\((?:(["'])(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1|.*?)\)/i,selector:/[^\{\}\s][^\{\};]*?(?=\s*\{)/,string:/("|')(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1/,property:/(\b|\B)[\w-]+(?=\s*:)/i,important:/\B!important\b/i,"function":/[-a-z0-9]+(?=\()/i,punctuation:/[(){};:]/},Prism.languages.css.atrule.inside.rest=Prism.util.clone(Prism.languages.css),Prism.languages.markup&&(Prism.languages.insertBefore("markup","tag",{style:{pattern:/(<style[\w\W]*?>)[\w\W]*?(?=<\/style>)/i,lookbehind:!0,inside:Prism.languages.css,alias:"language-css"}}),Prism.languages.insertBefore("inside","attr-value",{"style-attr":{pattern:/\s*style=("|').*?\1/i,inside:{"attr-name":{pattern:/^\s*style/i,inside:Prism.languages.markup.tag.inside},punctuation:/^\s*=\s*['"]|['"]\s*$/,"attr-value":{pattern:/.+/i,inside:Prism.languages.css}},alias:"language-css"}},Prism.languages.markup.tag));
+</script>
+
+<script type="text/javascript">
+Prism.languages.css.selector={pattern:/[^\{\}\s][^\{\}]*(?=\s*\{)/,inside:{"pseudo-element":/:(?:after|before|first-letter|first-line|selection)|::[-\w]+/,"pseudo-class":/:[-\w]+(?:\(.*\))?/,"class":/\.[-:\.\w]+/,id:/#[-:\.\w]+/}},Prism.languages.insertBefore("css","function",{hexcode:/#[\da-f]{3,6}/i,entity:/\\[\da-f]{1,8}/i,number:/[\d%\.]+/});
+</script>
+
+<script type="text/javascript">
+Prism.languages.markup={comment:/<!--[\w\W]*?-->/,prolog:/<\?[\w\W]+?\?>/,doctype:/<!DOCTYPE[\w\W]+?>/,cdata:/<!\[CDATA\[[\w\W]*?]]>/i,tag:{pattern:/<\/?(?!\d)[^\s>\/=.$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\\1|\\?(?!\1)[\w\W])*\1|[^\s'">=]+))?)*\s*\/?>/i,inside:{tag:{pattern:/^<\/?[^\s>\/]+/i,inside:{punctuation:/^<\/?/,namespace:/^[^\s>\/:]+:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/i,inside:{punctuation:/[=>"']/}},punctuation:/\/?>/,"attr-name":{pattern:/[^\s>\/]+/,inside:{namespace:/^[^\s>\/:]+:/}}}},entity:/&#?[\da-z]{1,8};/i},Prism.hooks.add("wrap",function(a){"entity"===a.type&&(a.attributes.title=a.content.replace(/&amp;/,"&"))}),Prism.languages.xml=Prism.languages.markup,Prism.languages.html=Prism.languages.markup,Prism.languages.mathml=Prism.languages.markup,Prism.languages.svg=Prism.languages.markup;
+</script>
+
+<script type="text/javascript">
+!function(){if("undefined"!=typeof self&&self.Prism&&self.document){var e={html:"HTML",xml:"XML",svg:"SVG",mathml:"MathML",css:"CSS",clike:"C-like",javascript:"JavaScript",abap:"ABAP",actionscript:"ActionScript",apacheconf:"Apache Configuration",apl:"APL",applescript:"AppleScript",asciidoc:"AsciiDoc",aspnet:"ASP.NET (C#)",autoit:"AutoIt",autohotkey:"AutoHotkey",basic:"BASIC",csharp:"C#",cpp:"C++",coffeescript:"CoffeeScript","css-extras":"CSS Extras",fsharp:"F#",glsl:"GLSL",http:"HTTP",inform7:"Inform 7",json:"JSON",latex:"LaTeX",lolcode:"LOLCODE",matlab:"MATLAB",mel:"MEL",nasm:"NASM",nginx:"nginx",nsis:"NSIS",objectivec:"Objective-C",ocaml:"OCaml",parigp:"PARI/GP",php:"PHP","php-extras":"PHP Extras",powershell:"PowerShell",jsx:"React JSX",rest:"reST (reStructuredText)",sas:"SAS",sass:"Sass (Sass)",scss:"Sass (Scss)",sql:"SQL",typescript:"TypeScript",vhdl:"VHDL",vim:"vim",wiki:"Wiki markup",yaml:"YAML"};Prism.hooks.add("before-highlight",function(s){var a=s.element.parentNode;if(a&&/pre/i.test(a.nodeName)){var t,i,r=a.getAttribute("data-language")||e[s.language]||s.language.substring(0,1).toUpperCase()+s.language.substring(1),l=a.previousSibling;l&&/\s*\bprism-show-language\b\s*/.test(l.className)&&l.firstChild&&/\s*\bprism-show-language-label\b\s*/.test(l.firstChild.className)?i=l.firstChild:(t=document.createElement("div"),i=document.createElement("div"),i.className="prism-show-language-label",t.className="prism-show-language",t.appendChild(i),a.parentNode.insertBefore(t,a)),i.innerHTML=r}})}}();
+</script>
+
+
+</body>
+
+</html>
